@@ -54,9 +54,9 @@ const ContactPage = () => {
             <div>
               <h3 className="uppercase text-sm tracking-wider mb-4">Reach us through</h3>
               <div className="w-8 h-1 bg-gray-700 mb-6"></div>
-              <div className="flex items-start mb-4">
+{/*               <div className="flex items-start mb-4">
                 <p>INT Animations,#3, 1st Avenue, 1st Floor,Ashok Nagar, Chennai - 600 083</p>
-              </div>
+              </div> */}
               <div className="flex items-start mb-4">
                 <a href="tel:+919884691234" className="text-blue-400 hover:underline">
                   +91 9884691234
