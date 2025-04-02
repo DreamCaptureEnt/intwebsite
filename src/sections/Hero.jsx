@@ -1,34 +1,43 @@
-import { useEffect, useState } from "react";
-import image1 from "../assets/Profile/Pic01.jpg";
-import image2 from "../assets/Profile/Pic04.jpg";
-// import image3 from "../assets/Profile/Pic09.jpg";
+import mainImage from "../assets/Profile/Pic01.jpg"; 
+import image1 from "../assets/Profile/logo01.jpg";   
+import image2 from "../assets/Profile/logo02.jpg";  
+import image3 from "../assets/Profile/logo03.png";  
 
 function Hero() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const images = [image1, image2];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000); // Change image every 4 seconds
-
-    return () => clearInterval(interval);
-  }, [images.length]);
-
   return (
     <section id="home" className="relative w-full h-screen overflow-hidden flex justify-center items-center">
-      {/* Image Slideshow with adjusted size */}
-      <div className="relative w-full h-full flex justify-center items-center overflow-hidden rounded-lg shadow-lg opacity-80" > 
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt="Slideshow"
-            className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
-              index === currentImageIndex ? "opacity-100" : "opacity-0"
-            }`}
-          />
-        ))}
+     {/* Full-Screen Main Image with a Soft Grey Blur */}
+     <div className="absolute w-full h-full">
+        <img src={mainImage} alt="Background" className="w-full h-full object-cover blur-[2px] opacity-95" />
+        <div className="absolute inset-0"></div>
+      </div>
+
+
+      {/* Clickable Reference Images Positioned to the Right */}
+      <div className="absolute right-10 top-[10%] flex flex-col gap-4">
+        {/* Image 1 (INT MEDIA) */}
+        <img
+          src={image1}
+          alt="INT MEDIA"
+          className="w-40 h-40 cursor-pointer rounded-lg shadow-lg transition-transform transform hover:scale-105"
+          onClick={() => window.open("https://www.youtube.com/channel/UCCNFPBjkrrVqbhZXijKlPNQ", "_blank")}
+        />
+
+        {/* Image 2 (INT SYSTEMS) */}
+        <img
+          src={image2}
+          alt="INT SYSTEMS"
+          className="w-40 h-40 cursor-pointer rounded-lg shadow-lg transition-transform transform hover:scale-105"
+          onClick={() => alert("Show Image Viewer")}
+        />
+
+        {/* Image 3 (INT ENTERTAINMENT) */}
+        <img
+          src={image3}
+          alt="INT ENTERTAINMENT"
+          className="w-40 h-40 cursor-pointer rounded-lg shadow-lg transition-transform transform hover:scale-105"
+          onClick={() => alert("Show Slideshow")}
+        />
       </div>
     </section>
   );
