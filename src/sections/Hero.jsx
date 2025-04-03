@@ -6,7 +6,7 @@ import image2 from "../assets/Profile/logo02.jpg";
 import image3 from "../assets/Profile/1logo03.png";
 import intsystem from "../assets/Profile/intsystem.jpg";
 import slide1 from "../assets/Profile/Slide/sf01.jpg"; 
-import slide2 from "../assets/Profile/SLide/sf02.jpg"; 
+import slide2 from "../assets/Profile/Slide/sf02.jpg"; 
 import slide3 from "../assets/Profile/Slide/sf03.jpg"; 
 
 function Hero() {
