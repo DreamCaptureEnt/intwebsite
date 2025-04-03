@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaPenNib, FaCubes, FaUsers, FaBoxOpen, FaPaintBrush, FaCube, FaTheaterMasks, FaLightbulb } from "react-icons/fa";
+import banner from "../assets/Profile/Banner.jpg";
 
 const services = [
   {
@@ -67,7 +68,7 @@ const Services = () => {
   };
 
   return (
-    <section id='services' className="relative w-full pt-32 pb-24 overflow-hidden">
+    <section id='services' className="relative w-full pt-24 overflow-hidden">
       <div className="container mx-auto text-center mb-10">
         <h2 className="text-4xl font-bold pb-10 text-white relative inline-block">Our Services
            <motion.div
@@ -115,6 +116,25 @@ const Services = () => {
           </div>
         ))}
       </div>
+    {/* Bottom Section with Heading & Image */}
+    <div className="mt-12 flex flex-col items-center text-center">
+      {/* Heading with Breathing Effect */}
+      <motion.h2
+        className="text-3xl md:text-4xl font-bold text-white mb-6"
+        animate={{ opacity: [1, 0.7, 1] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      >
+        Upcoming Works...
+      </motion.h2>
+
+      {/* Bottom Image */}
+      <img
+        src={banner} // Replace with your actual image variable
+        alt="Showcase"
+        className="w-full max-w-4xl h-auto rounded-lg shadow-lg px-10"
+      />
+    </div>
+
     </section>
   );
 };

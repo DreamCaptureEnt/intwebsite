@@ -45,12 +45,12 @@ function Hero() {
       </div>
 
       {/* Clickable Reference Images */}
-      <div className="absolute right-10 top-[10%] flex flex-col gap-4">
+      <div className="absolute right-10 flex flex-col gap-4">
         {/* Image 1 (INT MEDIA) */}
         <motion.img
           src={image1}
           alt="INT MEDIA"
-          className="w-40 h-40 cursor-pointer rounded-lg shadow-md"
+          className="w-32 h-32 md:w-40 md:h-40 lg:w-44 lg:h-44 xl:w-52 xl:h-52 cursor-pointer rounded-lg shadow-md"
           animate={{ scale: [1, 1.05, 1] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           onClick={() => window.open("https://www.youtube.com/channel/UCCNFPBjkrrVqbhZXijKlPNQ", "_blank")}
@@ -60,7 +60,7 @@ function Hero() {
         <motion.img
           src={image2}
           alt="INT SYSTEMS"
-          className="w-40 h-40 cursor-pointer rounded-lg shadow-md"
+          className="w-32 h-32 md:w-40 md:h-40 lg:w-44 lg:h-44 xl:w-52 xl:h-52 cursor-pointer rounded-lg shadow-md"
           animate={{ scale: [1, 1.05, 1] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           onClick={() => setShowPopup(true)}
@@ -70,12 +70,13 @@ function Hero() {
         <motion.img
           src={image3}
           alt="INT ENTERTAINMENT"
-          className="w-40 h-40 cursor-pointer rounded-lg shadow-md"
+          className="w-32 h-32 md:w-40 md:h-40 lg:w-44 lg:h-44 xl:w-52 xl:h-52 cursor-pointer rounded-lg shadow-md"
           animate={{ scale: [1, 1.05, 1] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           onClick={() => setShowSlideshow(true)}
         />
       </div>
+
 
 
       {/* Popup Modal for INT SYSTEMS */}
