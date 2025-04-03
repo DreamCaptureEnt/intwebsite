@@ -66,20 +66,24 @@ function Header() {
       <nav className="hidden md:flex items-center gap-5" style={{ userSelect: "none" }}>
         {links.map((link, index) => (
           <div key={index} className="flex flex-col items-center">
-            <Link
-              to={link.link}
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={`cursor-pointer font-poppins text-md ${
-                selectedLink === link.link ? "text-blue-500" : isHeroSection ? "text-white" : "text-white"
-              } hover:scale-105 hover:text-blue-500 transition-all ease-in-out`}
-              onSetActive={() => setSelectedLink(link.link)}
-              onClick={() => setSelectedLink(link.link)} // Ensure the link updates as active when clicked
-              style={{ userSelect: "none" }}
-            >
-              {link.title}
-            </Link>
+          <Link
+            to={link.link}
+            spy={true}
+            smooth={true}
+            duration={500}
+            className={`cursor-pointer font-poppins text-md ${
+              selectedLink === link.link 
+                ? "text-blue-500" 
+                : isHeroSection 
+                  ? "text-black" // Black text in hero section
+                  : "text-white" // White text in other sections
+            } hover:scale-105 hover:text-blue-500 transition-all ease-in-out`}
+            onSetActive={() => setSelectedLink(link.link)}
+            onClick={() => setSelectedLink(link.link)} 
+            style={{ userSelect: "none" }}
+          >
+            {link.title}
+          </Link>
             {selectedLink === link.link && (
               <motion.div
                 className="w-1/2 h-[2px] rounded-full bg-blue-500"
@@ -141,13 +145,15 @@ function Header() {
 
       {/* Hamburger Menu for Mobile */}
       <div className="md:hidden">
-        <Hamburger
-          toggled={isOpen}
-          toggle={setOpen}
-          size={20}
-          color="white"
-          rounded
-        />
+      <Hamburger
+        toggled={isOpen}
+        toggle={setOpen}
+        size={20}
+        color={isOpen ? "white" : isHeroSection ? "black" : "white"} // White inside menu, black in hero, white elsewhere
+        rounded
+      />
+
+
       </div>
     </motion.header>
   );
