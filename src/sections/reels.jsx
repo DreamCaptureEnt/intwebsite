@@ -32,7 +32,7 @@ function Reels() {
     currentVideoIndex === videoSources.length - 1 ? 0 : currentVideoIndex + 1;
 
   return (
-    <section id="home" className="relative w-full h-screen overflow-hidden">
+    <section id="reels" className="relative w-full h-screen overflow-hidden">
       {/* Background Overlay */}
       <div className="absolute inset-0 z-0">
         <div className="w-full h-full bg-gradient-to-b from-[#01092d] via-gray-800 to-[#01092d] opacity-80"></div>
