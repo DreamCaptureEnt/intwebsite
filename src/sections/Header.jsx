@@ -19,8 +19,8 @@ export default function Header() {
 
   const links = [
     { title: "Home", link: "home" },
+    { title: "Portfolio", link: "reels" },
     { title: "Services", link: "services" },
-    { title: "Portfolio", link: "portfolio" },
     { title: "About", link: "ourteam" },
     { title: "Contact", link: "contact" },
   ];
